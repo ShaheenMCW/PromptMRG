@@ -87,7 +87,7 @@ disease_labels = [
 for image_file in os.listdir(image_folder):
     if image_file.endswith((".png", ".jpg", ".jpeg")):
         image_path = os.path.join(image_folder, image_file)
-        print(f"\n🖼️ Processing: {image_file}")
+        print(f"\n Processing: {image_file}")
 
         # Load and preprocess image
         image = Image.open(image_path).convert('RGB')
@@ -120,7 +120,7 @@ for image_file in os.listdir(image_folder):
         
         # Debug: Check that we have 14 disease probabilities
         if len(disease_probs) != len(disease_labels):
-            print("⚠️ Warning: Number of disease probabilities does not match number of labels!")
+            print(" Warning: Number of disease probabilities does not match number of labels!")
             print("   Probabilities length:", len(disease_probs))
             print("   Labels length:", len(disease_labels))
         
@@ -141,8 +141,8 @@ for image_file in os.listdir(image_folder):
         output_results.append(result)
 
         # Print Results for the image
-        print("🚀 **Generated Report:**", captions[0])
-        print("📊 **Disease Classification:**")
+        print(" **Generated Report:**", captions[0])
+        print(" **Disease Classification:**")
         for disease, info in disease_output.items():
             print(f"   {disease}: {info['predicted_class']} (Prob: {info['probability']})")
 
@@ -161,4 +161,4 @@ for res in output_results:
 df = pd.DataFrame(csv_rows)
 output_csv_path = "generated_reports.csv"
 df.to_csv(output_csv_path, index=False)
-print(f"\n✅ Reports saved to {output_csv_path}")
+print(f"\n Reports saved to {output_csv_path}")
