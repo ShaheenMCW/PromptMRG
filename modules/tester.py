@@ -64,4 +64,3 @@ class Tester(BaseTester):
             log.update(**{'test_' + k: v for k, v in test_met.items()})
             log.update(**{'test_' + k: v for k, v in test_ce.items()})
         return log
-

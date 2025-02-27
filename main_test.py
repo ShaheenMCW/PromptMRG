@@ -112,7 +112,7 @@ def main():
     # build trainer and start to train
     tester = Tester(model, criterion_cls, metrics, args, device, test_dataloader)
 
-    log = tester.test_blip()
+    log = tester.test_blip() 
     for key, value in log.items():
         print('\t{:15s}: {}'.format(str(key), value))
     

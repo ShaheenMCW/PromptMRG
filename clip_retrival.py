@@ -10,7 +10,7 @@ from torchvision import transforms
 # 1. Setup Device and Paths
 # ---------------------------
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
-pretrained_path = 'data/mimic_cxr/clip-imp-pretrained_128_6_after_4.pt'  # Pre-trained CLIP weights
+pretrained_path = 'data/mimic_cxr/clip-imp-pretrained_128_6_after_4.pt'  
 clip_text_features_path = "data/mimic_cxr/clip_text_features.json"  # Precomputed CLIP text features
 image_path = "PromptMRG/test_image/person103_bacteria_488.jpeg"  # Replace with your actual image
 
